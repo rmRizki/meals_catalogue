@@ -15,7 +15,7 @@ class DetailScreen extends StatelessWidget {
           onPressed: () => Navigator.pop(context, false),
         ),
       ),
-      body: ListView(
+      body: Column(
         children: <Widget>[
           Image.asset(
             img,
