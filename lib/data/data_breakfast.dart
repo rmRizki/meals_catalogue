@@ -1,5 +1,5 @@
-class Data {
-  List<Map<String,dynamic>> data = [
+class DataBreakfast {
+  List<Map<String,dynamic>> dataBreakfast = [
     {
       'nama': 'Bayam',
       'desc':
