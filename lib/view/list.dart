@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'data.dart';
+import 'package:meals_catalogue/data/data.dart';
 import 'detail.dart';
 
 class ListScreen extends StatelessWidget {
