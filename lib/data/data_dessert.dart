@@ -1,63 +1,63 @@
 class DataDessert {
-  List<Map<String,dynamic>> dataDessert = [
+  List<Map<String, dynamic>> dataDessert = [
     {
-      'nama': 'Bayam',
+      'nama': 'Martabak manis',
       'desc':
-      'Bayam mengandung zat besi, kalsium, serat, dan beragam vitamin. Nutrisi ini sangat berguna untuk tumbuh kembang anak',
+          'Meski banyak varian kekiniannya, martabak manis tetap termasuk makanan tradisional khas Indonesia. Adonan empuk dan legitnya itu lho yang bikin jatuh hati.',
       'img': 'img/bayam.jpg'
     },
     {
-      'nama': 'Keju',
+      'nama': 'Gemblong',
       'desc':
-      'Keju merupakan sumber vitamin D, kalsium, dan protein yang berguna untuk pertumbuhan hormon, sehingga bikin tubuh makin tinggi',
+          'Makanan yang terbuat dari adonan beras ketan putih ini namanya gemblong, tapi ada sebagian yang menyebutnya getas. Siraman gula merah yang bertemu dengan gurih adonan gemblong jadi pelengkap yang sempurna.',
       'img': 'img/keju.jpg'
     },
     {
-      'nama': 'Yoghurt',
+      'nama': 'Kue ape',
       'desc':
-      'Sama seperti keju, yoghurt mengandung vitamin D dan kalsium yang baik buat pertumbuhan anak-anak, khususnya tinggi badan',
+          'Kue ape alias kue tetek ini jadi salah satu jajanan paling favorit di sejumlah kota, terutama Jakarta. Kamu bisa menemukannya di pasar tradisional atau pedagang kaki lima. Aroma pandannya yang wangi saat dibuat selalu bikin mereka yang lewat ngiler.',
       'img': 'img/yoghurt.jpg'
     },
     {
-      'nama': 'Wortel',
+      'nama': 'Pukis keju',
       'desc':
-      'Wortel, favorit anak-anak, ini bisa ditambahkan ke dalam sup. Kandungan vitamin A-nya membantu pembentukan protein dalam tubuh',
+          'Kue pukis sekilas rasanya mirip kue cubit, hanya saja ukurannya lebih besar dan adonannya padat.',
       'img': 'img/wortel.jpg'
     },
     {
-      'nama': 'Ikan',
+      'nama': 'Pisang goreng',
       'desc':
-      'Ikan yang kaya protein membantu tumbuhnya tulang-tulang dan otot sehat. Salmon dan tuna adalah salah satu terbaiknya',
+          'Pisang goreng selain jadi camilan atau pendamping minum teh, bisa juga disajikan di akhir sebagai hidangan penutup. Mantap!',
       'img': 'img/ikan.jpg'
     },
     {
-      'nama': 'Telur',
+      'nama': 'Kue lapis',
       'desc':
-      'Telur mengandung vitamin B12 dan protein yang bisa bikin anak semakin tinggi. Tambahkan berbagai kreasi masakan telur untuk sarapan',
+          'Kue lapis berbahan sagu ini bertekstur kenyal dan rasanya manis. Kamu tim langsung lahap atau yang makannya bertahap sambil melepas layer-nya satu-persatu nih?',
       'img': 'img/telur.jpg'
     },
     {
-      'nama': 'Lobak',
+      'nama': 'Kue cucur',
       'desc':
-      'Rutin mengonsumsi lobak bisa bikin anak makin tinggi, karena mengandung mineral, protein, serat, dan lemak yang dibutuhkan tubuh',
+          'Sore-sore makan kue cucur bareng secangkir teh hangat jadi hal sederhana yang bikin hati mendadak bahagia. Manisnya gula merah memang kawin banget jika dipadukan dengan adonan tepung dan santan yang gurih.',
       'img': 'img/lobak.jpg'
     },
     {
-      'nama': 'Kacang Kedelai',
+      'nama': 'Bika Ambon',
       'desc':
-      'Kacang kedelai jadi sumber folat, serat, vitamin, protein, dan karbohidrat, berguna untuk meningkatkan massa tulang dan jaringan',
+          'Meski namanya bika Ambon, makanan satu ini justru berasal dari Medan, Sumatera Utara. Dinamai demikian konon katanya dijual pertama kali di Jalan Ambon, Medan.',
       'img': 'img/kedelai.jpg'
     },
     {
-      'nama': 'Mangga',
+      'nama': 'Klepon',
       'desc':
-      'Mangga bisa bikin tulang lebih kuat dan makin tumbuh tinggi, karena vitamin A-nya tinggi',
+          'Kue bertekstur kenyal satu ini selalu punya "kejutan" dengan  ledakan gula merahnya yang lumer ketika digigit. Siapa yang masih suka kaget bahkan tersedak, nih?',
       'img': 'img/mangga.jpg'
     },
     {
-      'nama': 'Pisang',
+      'nama': 'Nagasari',
       'desc':
-      'Gak cuma bikin cepat kenyang, pisang kaya potasium dan beberapa kandungan mineral lainnya',
+          'Gurihnya adonan lembut yang terbuat dari tepung beras sangat serasi dengan manisnya buah pisang. Ditambah aroma daun pisang yang jadi pembungkusnya bikin nagasari makin nikmat, ya gak?',
       'img': 'img/pisang.jpeg'
     }
   ];
