@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:meals_catalogue/data/data.dart';
 import 'detail.dart';
 
-class ListScreen extends StatelessWidget {
-  final data = Data().data;
+class ListScreen extends StatefulWidget {
+  @override
+  _ListScreenState createState() => _ListScreenState();
+}
+
+class _ListScreenState extends State<ListScreen> {
+  var data = Data().data;
 
   @override
   Widget build(BuildContext context) {
