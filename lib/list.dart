@@ -9,7 +9,7 @@ class ListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Bahan Makanan'),
+        title: Text('Bahan Makanan'),
       ),
       body: GridView.builder(
         gridDelegate:
