@@ -21,20 +21,12 @@ class _BreakfastScreenState extends State<BreakfastScreen> {
         var desc = data[index]['desc'];
         var img = data[index]['img'];
         return Container(
-          padding: EdgeInsets.all(8),
+          margin: EdgeInsets.all(16),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(32),
             child: Card(
               elevation: 8,
               child: GridTile(
-                footer: Container(
-                  color: Colors.white70,
-                  child: Text(
-                    name,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
-                  ),
-                ),
                 child: GestureDetector(
                     child: Hero(
                       tag: img,
@@ -50,6 +42,14 @@ class _BreakfastScreenState extends State<BreakfastScreen> {
                             builder: (context) => DetailScreen(name, desc, img),
                           ));
                     }),
+                footer: Container(
+                  color: Colors.white70,
+                  child: Text(
+                    name,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
+                  ),
+                ),
               ),
             ),
           ),

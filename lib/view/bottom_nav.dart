@@ -17,12 +17,9 @@ class _BottomNavigationState extends State<BottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: IndexedStack(
-          children: _children,
-          index: _currentIndex,
-        ),
+      body: IndexedStack(
+        children: _children,
+        index: _currentIndex,
       ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTabTapped,
