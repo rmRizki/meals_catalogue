@@ -17,11 +17,14 @@ class DetailScreen extends StatelessWidget {
       ),
       body: Column(
         children: <Widget>[
-          Image.asset(
-            img,
-            width: 600,
-            height: 200,
-            fit: BoxFit.cover,
+          Hero(
+            tag: img,
+            child: Image.asset(
+              img,
+              width: 600,
+              height: 200,
+              fit: BoxFit.cover,
+            ),
           ),
           Center(
               child: Text(
