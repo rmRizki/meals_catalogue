@@ -19,7 +19,10 @@ class _BottomNavigationState extends State<BottomNavigation> {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: _children[_currentIndex],
+        child: IndexedStack(
+          children: _children,
+          index: _currentIndex,
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTabTapped,
