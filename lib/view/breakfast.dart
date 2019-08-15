@@ -25,6 +25,7 @@ class _BreakfastScreenState extends State<BreakfastScreen> {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(32),
             child: Card(
+              elevation: 8,
               child: GridTile(
                 footer: Container(
                   color: Colors.white70,

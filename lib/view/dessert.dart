@@ -25,6 +25,7 @@ class _DessertScreenState extends State<DessertScreen> {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(32),
             child: Card(
+              elevation: 8,
               child: GridTile(
                 footer: Container(
                   color: Colors.white70,
