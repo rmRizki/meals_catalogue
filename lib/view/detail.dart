@@ -11,26 +11,38 @@ class DetailScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
-            floating: true,
             expandedHeight: 250,
             flexibleSpace: FlexibleSpaceBar(
               background: Hero(
                 tag: img,
-                child: Image.asset(
-                  img,
-                  fit: BoxFit.fill,
-                ),
+                child: Image.asset(img, fit: BoxFit.fill),
               ),
             ),
-            title: Text(name),
-            centerTitle: true,
           ),
-          // Center(
-          //     child: Text(
-          //   name,
-          //   style: TextStyle(fontSize: 32),
-          // )),
-          // Text(desc, textAlign: TextAlign.center)
+          SliverList(
+            delegate: SliverChildListDelegate(
+              [
+                Container(
+                  margin: EdgeInsets.all(8),
+                  child: Card(
+                    child: Container(
+                      padding: EdgeInsets.all(16),
+                      child: Column(
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.only(bottom: 8),
+                            child: Center(
+                                child: Text(name, style: TextStyle(fontSize: 32))),
+                          ),
+                          Text(desc, textAlign: TextAlign.center)
+                        ],
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );
