@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:meals_catalogue/view/breakfast.dart';
-import 'package:meals_catalogue/view/dessert.dart';
+import 'package:meals_catalogue/view/menu_breakfast.dart';
+import 'package:meals_catalogue/view/menu_dessert.dart';
 
 class BottomNavigation extends StatefulWidget {
   @override
