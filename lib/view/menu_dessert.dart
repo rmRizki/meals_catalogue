@@ -47,8 +47,8 @@ class _DessertScreenState extends State<DessertScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => DetailScreen(name, desc, img),
-                          ));
+                              builder: (context) =>
+                                  DetailScreen(name, desc, img)));
                     }),
               ),
             ),
