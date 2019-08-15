@@ -8,30 +8,29 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Detail Makanan'),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () => Navigator.pop(context, false),
-        ),
-      ),
-      body: Column(
-        children: <Widget>[
-          Hero(
-            tag: img,
-            child: Image.asset(
-              img,
-              width: 600,
-              height: 200,
-              fit: BoxFit.cover,
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverAppBar(
+            floating: true,
+            expandedHeight: 250,
+            flexibleSpace: FlexibleSpaceBar(
+              background: Hero(
+                tag: img,
+                child: Image.asset(
+                  img,
+                  fit: BoxFit.fill,
+                ),
+              ),
             ),
+            title: Text(name),
+            centerTitle: true,
           ),
-          Center(
-              child: Text(
-            name,
-            style: TextStyle(fontSize: 32),
-          )),
-          Text(desc, textAlign: TextAlign.center)
+          // Center(
+          //     child: Text(
+          //   name,
+          //   style: TextStyle(fontSize: 32),
+          // )),
+          // Text(desc, textAlign: TextAlign.center)
         ],
       ),
     );
