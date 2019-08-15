@@ -35,7 +35,7 @@ class _BreakfastScreenState extends State<BreakfastScreen> {
                     style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
                   ),
                 ),
-                child: InkResponse(
+                child: GestureDetector(
                     child: Hero(
                       tag: img,
                       child: Image.asset(
