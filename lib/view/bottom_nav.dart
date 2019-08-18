@@ -27,11 +27,11 @@ class _BottomNavigationState extends State<BottomNavigation> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.free_breakfast),
-            title: Text('Breakfast'),
+            title: Text('Dessert'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.restaurant),
-            title: Text('Dessert'),
+            title: Text('Seafood'),
           ),
         ],
       ),
