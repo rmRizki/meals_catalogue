@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:meals_catalogue/data/data_breakfast.dart';
+import 'package:meals_catalogue/data/data_dessert.dart';
 import 'package:meals_catalogue/view/detail.dart';
 
-class BreakfastScreen extends StatefulWidget {
+class SeafoodScreen extends StatefulWidget {
   @override
-  _BreakfastScreenState createState() => _BreakfastScreenState();
+  _SeafoodScreenState createState() => _SeafoodScreenState();
 }
 
-class _BreakfastScreenState extends State<BreakfastScreen> {
-  var data = DataBreakfast().dataBreakfast;
+class _SeafoodScreenState extends State<SeafoodScreen> {
+  var data = DataDessert().dataDessert;
 
   @override
   Widget build(BuildContext context) {

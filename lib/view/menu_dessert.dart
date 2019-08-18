@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meals_catalogue/data/data_dessert.dart';
+import 'package:meals_catalogue/data/data_breakfast.dart';
 import 'package:meals_catalogue/view/detail.dart';
 
 class DessertScreen extends StatefulWidget {
@@ -8,7 +8,7 @@ class DessertScreen extends StatefulWidget {
 }
 
 class _DessertScreenState extends State<DessertScreen> {
-  var data = DataDessert().dataDessert;
+  var data = DataBreakfast().dataBreakfast;
 
   @override
   Widget build(BuildContext context) {

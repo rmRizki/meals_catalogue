@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:meals_catalogue/view/menu_breakfast.dart';
 import 'package:meals_catalogue/view/menu_dessert.dart';
+import 'package:meals_catalogue/view/menu_seafood.dart';
 
 class BottomNavigation extends StatefulWidget {
   @override
@@ -10,8 +10,8 @@ class BottomNavigation extends StatefulWidget {
 class _BottomNavigationState extends State<BottomNavigation> {
   int _currentIndex = 0;
   var _children = [
-    BreakfastScreen(),
     DessertScreen(),
+    SeafoodScreen(),
   ];
 
   @override
