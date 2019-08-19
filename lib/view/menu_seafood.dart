@@ -12,7 +12,7 @@ class SeafoodScreen extends StatefulWidget {
 class _SeafoodScreenState extends State<SeafoodScreen> {
   List<Seafood> data = [];
 
- @override
+  @override
   void initState() {
     super.initState();
     loadData();
@@ -50,8 +50,7 @@ class _SeafoodScreenState extends State<SeafoodScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) =>
-                                  DetailScreen(id),
+                              builder: (context) => DetailScreen(id),
                             ));
                       }),
                   footer: Container(

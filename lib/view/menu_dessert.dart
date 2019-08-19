@@ -50,8 +50,7 @@ class _DessertScreenState extends State<DessertScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) =>
-                                  DetailScreen(id),
+                              builder: (context) => DetailScreen(id),
                             ));
                       }),
                   footer: Container(

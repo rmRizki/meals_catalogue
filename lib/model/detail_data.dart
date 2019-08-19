@@ -7,6 +7,7 @@ class Detail {
   Detail(this.idDetail, this.nameDetail, this.thumbDetail, this.descDetail);
 
   factory Detail.fromJson(Map<String, dynamic> json) {
-    return Detail(json['idMeal'], json['strMeal'], json['strMealThumb'],json['strInstructions']);
+    return Detail(json['idMeal'], json['strMeal'], json['strMealThumb'],
+        json['strInstructions']);
   }
 }

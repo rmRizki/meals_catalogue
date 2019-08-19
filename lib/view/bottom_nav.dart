@@ -10,11 +10,7 @@ class BottomNavigation extends StatefulWidget {
 
 class _BottomNavigationState extends State<BottomNavigation> {
   int _currentIndex = 0;
-  var _children = [
-    DessertScreen(),
-    SeafoodScreen(),
-    FavoriteScreen()
-  ];
+  var _children = [DessertScreen(), SeafoodScreen(), FavoriteScreen()];
 
   @override
   Widget build(BuildContext context) {
