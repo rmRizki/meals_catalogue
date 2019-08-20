@@ -40,28 +40,6 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-  assets:
-    - img/bayam.jpg
-    - img/ikan.jpg
-    - img/kedelai.jpg
-    - img/keju.jpg
-    - img/lobak.jpg
-    - img/mangga.jpg
-    - img/pisang.jpeg
-    - img/telur.jpg
-    - img/wortel.jpg
-    - img/yoghurt.jpg
-    - img/ape.jpg #dessert from here
-    - img/bika.jpg
-    - img/cucur.jpg
-    - img/gemblong.jpg
-    - img/klepon.jpg
-    - img/lapis.jpg
-    - img/martabak.jpg
-    - img/nagasari.jpg
-    - img/pisgor.jpg
-    - img/pukis.jpg
-
   # To add assets to your application, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg
