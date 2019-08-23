@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meals_catalogue/view/menu_dessert.dart';
 import 'package:meals_catalogue/view/menu_favorite.dart';
 import 'package:meals_catalogue/view/menu_seafood.dart';
+import 'package:meals_catalogue/view/search/search.dart';
 
 class BottomNavigation extends StatefulWidget {
   @override
@@ -18,6 +19,14 @@ class _BottomNavigationState extends State<BottomNavigation> {
       body: IndexedStack(
         children: _children,
         index: _currentIndex,
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.search),
+        onPressed: (){
+          Navigator.push(context, MaterialPageRoute(
+            builder: (context) => SearchScreen()
+          ));
+        },
       ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTabTapped,
