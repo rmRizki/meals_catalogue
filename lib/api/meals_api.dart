@@ -2,6 +2,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:meals_catalogue/model/data_dessert.dart';
 import 'package:meals_catalogue/model/data_seafood.dart';
+import 'package:meals_catalogue/model/data_search.dart';
 import 'package:meals_catalogue/model/detail_data.dart';
 
 class MealsApi {
@@ -35,6 +36,17 @@ class MealsApi {
     var responseJson = json.decode(response.body);
     if (response.statusCode == 200) {
       return Detail.fromJson(responseJson);
+    } else {
+      throw Exception('Failed to load data');
+    }
+  }
+
+  Future<Search> loadDataSearch(String query,String category) async{
+    String dataUrl = "$baseUrl/search.php?s=$query";
+    http.Response response = await http.get(dataUrl);
+    var responseJson = json.decode(response.body);
+    if (response.statusCode == 200) {
+      return Search.fromJson(responseJson,category);
     } else {
       throw Exception('Failed to load data');
     }
