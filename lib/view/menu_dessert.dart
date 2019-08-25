@@ -10,6 +10,7 @@ class DessertScreen extends StatefulWidget {
 
 class _DessertScreenState extends State<DessertScreen> {
   Future future = MealsApi().loadDataDessert();
+  String menuName = "DessertScreen";
   String category = "Dessert";
 
   @override
@@ -41,18 +42,22 @@ class _DessertScreenState extends State<DessertScreen> {
                           child: GridTile(
                             child: GestureDetector(
                                 child: Hero(
-                                  tag: img,
-                                  child: CachedNetworkImage(
-                                    imageUrl: img,
-                                    fit: BoxFit.cover,
-                                  )
-                                ),
+                                    tag: "$img$index$menuName",
+                                    child: CachedNetworkImage(
+                                      imageUrl: img,
+                                      fit: BoxFit.cover,
+                                    )),
                                 onTap: () {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) => DetailScreen(
-                                            id, img, name, category),
+                                            id,
+                                            img,
+                                            name,
+                                            category,
+                                            menuName,
+                                            index),
                                       ));
                                 }),
                             footer: Container(

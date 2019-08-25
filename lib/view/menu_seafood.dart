@@ -10,6 +10,7 @@ class SeafoodScreen extends StatefulWidget {
 
 class _SeafoodScreenState extends State<SeafoodScreen> {
   Future future = MealsApi().loadDataSeafood();
+  String menuName = "SeafoodScreen";
   String category = "Seafood";
 
   @override
@@ -41,7 +42,7 @@ class _SeafoodScreenState extends State<SeafoodScreen> {
                           child: GridTile(
                             child: GestureDetector(
                                 child: Hero(
-                                  tag: img,
+                                  tag: "$img$index$menuName",
                                   child: CachedNetworkImage(
                                     imageUrl: img,
                                     fit: BoxFit.cover,
@@ -52,7 +53,12 @@ class _SeafoodScreenState extends State<SeafoodScreen> {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) => DetailScreen(
-                                            id, img, name, category),
+                                            id,
+                                            img,
+                                            name,
+                                            category,
+                                            menuName,
+                                            index),
                                       ));
                                 }),
                             footer: Container(

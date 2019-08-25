@@ -11,8 +11,11 @@ class DetailScreen extends StatefulWidget {
   final String img;
   final String name;
   final String category;
+  final String menuOrigin;
+  final int index;
 
-  DetailScreen(this.id, this.img, this.name, this.category);
+  DetailScreen(
+      this.id, this.img, this.name, this.category, this.menuOrigin, this.index);
 
   @override
   _DetailScreenState createState() => _DetailScreenState();
@@ -44,7 +47,7 @@ class _DetailScreenState extends State<DetailScreen> {
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
                 background: Hero(
-                  tag: widget.img,
+                  tag: "${widget.img}${widget.index}${widget.menuOrigin}",
                   child: CachedNetworkImage(
                       imageUrl: widget.img, fit: BoxFit.fill),
                 ),

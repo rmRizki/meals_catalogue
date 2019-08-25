@@ -9,6 +9,7 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
+  String menuName = "Search";
   String category = "Dessert";
   String inputQuery = "";
 
@@ -90,7 +91,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           child: GridTile(
                             child: GestureDetector(
                                 child: Hero(
-                                  tag: img,
+                                  tag: "$img$index$menuName",
                                   child: CachedNetworkImage(
                                     imageUrl: img,
                                     fit: BoxFit.cover,
@@ -101,7 +102,12 @@ class _SearchScreenState extends State<SearchScreen> {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) => DetailScreen(
-                                            id, img, name, category),
+                                            id,
+                                            img,
+                                            name,
+                                            category,
+                                            menuName,
+                                            index),
                                       ));
                                 }),
                             footer: Container(
