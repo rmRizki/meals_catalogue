@@ -10,21 +10,14 @@ class FavoriteDessert extends StatefulWidget {
 }
 
 class _FavoriteDessertState extends State<FavoriteDessert> {
-  Future<List<MealsProperty>> listMeals;
   String menuName = "FavoriteDessert";
   String category = "Dessert";
-
-  @override
-  void initState() {
-    listMeals = DBHelper.internal().getFavorite(category);
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
         initialData: <MealsProperty>[],
-        future: listMeals,
+        future: DBHelper.internal().getFavorite(category),
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
             case ConnectionState.waiting:
