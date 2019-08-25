@@ -22,4 +22,14 @@ class DetailProperty {
     return DetailProperty(json['idMeal'], json['strMeal'], json['strMealThumb'],
         json['strInstructions'], json['strCategory']);
   }
+
+  Map<String, dynamic> toMap() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['idMeal'] = this.idDetail;
+    data['strMeal'] = this.nameDetail;
+    data['strMealThumb'] = this.thumbDetail;
+    data['strInstructions'] = this.descDetail;
+    data['strCategory'] = this.categoryDetail;  
+    return data;
+  }
 }
