@@ -17,14 +17,13 @@ class DetailScreen extends StatefulWidget {
 }
 
 class _DetailScreenState extends State<DetailScreen> {
-  bool isFavorite;
+  bool isFavorite = false;
 
   @override
   void initState() {
     DBHelper.internal().checkIsFavorite(widget.id).then((boolValue) {
       setState(() {
         isFavorite = boolValue;
-        print(isFavorite);
       });
     });
     super.initState();
@@ -33,6 +32,7 @@ class _DetailScreenState extends State<DetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: favoriteButton(),
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool inner) {
           return <Widget>[
@@ -45,9 +45,6 @@ class _DetailScreenState extends State<DetailScreen> {
                   child: Image.network(widget.img, fit: BoxFit.fill),
                 ),
               ),
-              actions: <Widget>[
-                favoriteButton(),
-              ],
             )
           ];
         },
@@ -100,13 +97,9 @@ class _DetailScreenState extends State<DetailScreen> {
 
   favoriteButton() {
     if (isFavorite) {
-      return IconButton(
-        icon: Padding(
-          padding: EdgeInsets.all(16.0),
-          child: Icon(
-            Icons.favorite,
-            color: Colors.red,
-          ),
+      return FloatingActionButton(
+        child: Icon(
+          Icons.favorite,
         ),
         onPressed: () {
           DBHelper.internal().deleteFavorite(widget.id).then((resValue) {
@@ -118,15 +111,13 @@ class _DetailScreenState extends State<DetailScreen> {
         },
       );
     } else {
-      return IconButton(
+      return FloatingActionButton(
+        child: Icon(
+          Icons.favorite_border,
+        ),
         onPressed: () {
           MealsProperty data = MealsProperty(
-            widget.id,
-            widget.name,
-            widget.img,
-            widget.category,
-            null
-          );
+              widget.id, widget.name, widget.img, widget.category, null);
           DBHelper.internal().addFavorite(data).then((resValue) {
             if (resValue > 0) {
               setState(() => isFavorite = true);
@@ -134,13 +125,6 @@ class _DetailScreenState extends State<DetailScreen> {
           });
           Toast.show("Added to Favorite", context);
         },
-        icon: Padding(
-          padding: EdgeInsets.all(16.0),
-          child: Icon(
-            Icons.favorite_border,
-            color: Colors.red,
-          ),
-        ),
       );
     }
   }
