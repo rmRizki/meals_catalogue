@@ -1,3 +1,4 @@
+import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 import 'package:meals_catalogue/api/meals_api.dart';
 import 'package:meals_catalogue/database/db_helper.dart';
@@ -18,6 +19,7 @@ class DetailScreen extends StatefulWidget {
 
 class _DetailScreenState extends State<DetailScreen> {
   bool isFavorite = false;
+  final memoizer = new AsyncMemoizer();
 
   @override
   void initState() {
@@ -55,7 +57,9 @@ class _DetailScreenState extends State<DetailScreen> {
 
   Widget detailDesc() {
     return FutureBuilder(
-      future: MealsApi().loadDataDetail(widget.id),
+      future: this.memoizer.runOnce(() async{
+        return MealsApi().loadDataDetail(widget.id);
+      }),
       builder: (context, snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.waiting:
