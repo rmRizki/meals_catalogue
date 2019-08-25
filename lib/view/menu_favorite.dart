@@ -8,24 +8,30 @@ class FavoriteScreen extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: TabBar(
-              tabs: <Widget>[
-                Tab(
-                  text: "Dessert",
+        body: NestedScrollView(
+          headerSliverBuilder: (BuildContext context, bool inner) {
+            return <Widget>[
+              SliverAppBar(
+                centerTitle: true,
+                title: TabBar(
+                  tabs: <Widget>[
+                    Tab(
+                      text: "Dessert",
+                    ),
+                    Tab(
+                      text: "Seafood",
+                    )
+                  ],
                 ),
-                Tab(
-                  text: "Seafood",
-                )
-              ],
-            ),
-        ),
-        body: TabBarView(
-          children: [
-            FavoriteDessert(),
-            FavoriteSeafood(),
-          ],
+              )
+            ];
+          },
+          body: TabBarView(
+            children: [
+              FavoriteDessert(),
+              FavoriteSeafood(),
+            ],
+          ),
         ),
       ),
     );
