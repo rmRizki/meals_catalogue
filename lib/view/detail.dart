@@ -19,7 +19,7 @@ class DetailScreen extends StatefulWidget {
 }
 
 class _DetailScreenState extends State<DetailScreen> {
-  final memoizer = new AsyncMemoizer();
+  final memoizer = AsyncMemoizer();
   bool isFavorite = false;
 
   @override
