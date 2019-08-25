@@ -27,7 +27,6 @@ class DBHelper {
   void _onCreate(Database db, int version) async {
     await db.execute(
         "CREATE TABLE favorite(id INTEGER PRIMARY KEY AUTOINCREMENT, idMeal TEXT, strMeal TEXT, strMealThumb TEXT, strCategory TEXT)");
-    print("DB Created");
   }
 
   Future<List<MealsProperty>> getFavorite(String category) async {
