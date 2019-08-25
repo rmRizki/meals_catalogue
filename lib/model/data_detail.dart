@@ -1,6 +1,6 @@
 class Detail {
   List<DetailProperty> detail = [];
-
+  
   Detail.fromJson(Map<String, dynamic> json) {
     json['meals'].forEach((json) {
       detail.add(DetailProperty.fromJson(json));
