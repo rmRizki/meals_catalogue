@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:meals_catalogue/model/data_dessert.dart';
 import 'package:meals_catalogue/model/data_seafood.dart';
 import 'package:meals_catalogue/model/data_search.dart';
-import 'package:meals_catalogue/model/detail_data.dart';
+import 'package:meals_catalogue/model/data_detail.dart';
 
 class MealsApi {
   final baseUrl = "https://www.themealdb.com/api/json/v1/1";
