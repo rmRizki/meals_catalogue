@@ -9,6 +9,7 @@ class DessertScreen extends StatefulWidget {
 
 class _DessertScreenState extends State<DessertScreen> {
   Future future = MealsApi().loadDataDessert();
+  String category = "Dessert";
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +50,8 @@ class _DessertScreenState extends State<DessertScreen> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => DetailScreen(id,img),
+                                        builder: (context) => DetailScreen(
+                                            id, img, name, category),
                                       ));
                                 }),
                             footer: Container(

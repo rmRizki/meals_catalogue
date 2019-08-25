@@ -1,17 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:meals_catalogue/api/meals_api.dart';
+import 'package:meals_catalogue/database/db_helper.dart';
+import 'package:meals_catalogue/model/data_meals_detail.dart';
+import 'package:toast/toast.dart';
 
 class DetailScreen extends StatefulWidget {
   final String id;
   final String img;
+  final String name;
+  final String category;
 
-  DetailScreen(this.id, this.img);
+  DetailScreen(this.id, this.img, this.name, this.category);
 
   @override
   _DetailScreenState createState() => _DetailScreenState();
 }
 
 class _DetailScreenState extends State<DetailScreen> {
+  bool isFavorite;
+
+  @override
+  void initState() {
+    DBHelper.internal().checkIsFavorite(widget.id).then((boolValue) {
+      setState(() {
+        isFavorite = boolValue;
+        print(isFavorite);
+      });
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,6 +45,9 @@ class _DetailScreenState extends State<DetailScreen> {
                   child: Image.network(widget.img, fit: BoxFit.fill),
                 ),
               ),
+              actions: <Widget>[
+                favoriteButton(),
+              ],
             )
           ];
         },
@@ -46,7 +67,7 @@ class _DetailScreenState extends State<DetailScreen> {
             if (snapshot.hasError) {
               return Text('Error: ${snapshot.error}');
             } else {
-              var name = snapshot.data.meals[0].nameMeal;
+              var name = widget.name;
               var desc = snapshot.data.meals[0].descMeal;
               return ListView(
                 children: <Widget>[
@@ -75,5 +96,52 @@ class _DetailScreenState extends State<DetailScreen> {
         }
       },
     );
+  }
+
+  favoriteButton() {
+    if (isFavorite) {
+      return IconButton(
+        icon: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Icon(
+            Icons.favorite,
+            color: Colors.red,
+          ),
+        ),
+        onPressed: () {
+          DBHelper.internal().deleteFavorite(widget.id).then((resValue) {
+            if (resValue > 0) {
+              setState(() => isFavorite = false);
+            }
+          });
+          Toast.show("Removed from Favorite", context);
+        },
+      );
+    } else {
+      return IconButton(
+        onPressed: () {
+          MealsProperty data = MealsProperty(
+            widget.id,
+            widget.name,
+            widget.img,
+            widget.category,
+            null
+          );
+          DBHelper.internal().addFavorite(data).then((resValue) {
+            if (resValue > 0) {
+              setState(() => isFavorite = true);
+            }
+          });
+          Toast.show("Added to Favorite", context);
+        },
+        icon: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Icon(
+            Icons.favorite_border,
+            color: Colors.red,
+          ),
+        ),
+      );
+    }
   }
 }

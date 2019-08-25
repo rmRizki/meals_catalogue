@@ -99,8 +99,8 @@ class _SearchScreenState extends State<SearchScreen> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) =>
-                                            DetailScreen(id, img),
+                                        builder: (context) => DetailScreen(
+                                            id, img, name, category),
                                       ));
                                 }),
                             footer: Container(
