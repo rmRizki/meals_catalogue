@@ -30,12 +30,12 @@ class MealsApi {
     }
   }
 
-  Future<Detail> loadDataDetail(String id) async{
+  Future<Meal> loadDataDetail(String id) async{
     String dataUrl = "$baseUrl/lookup.php?i=$id";
     http.Response response = await http.get(dataUrl);
     var responseJson = json.decode(response.body);
     if (response.statusCode == 200) {
-      return Detail.fromJson(responseJson);
+      return Meal.fromJson(responseJson);
     } else {
       throw Exception('Failed to load data');
     }

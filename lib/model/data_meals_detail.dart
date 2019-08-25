@@ -1,35 +1,35 @@
-class Detail {
-  List<DetailProperty> detail = [];
+class Meal {
+  List<MealsProperty> meals = [];
   
-  Detail.fromJson(Map<String, dynamic> json) {
+  Meal.fromJson(Map<String, dynamic> json) {
     json['meals'].forEach((json) {
-      detail.add(DetailProperty.fromJson(json));
+      meals.add(MealsProperty.fromJson(json));
     });
   }
 }
 
-class DetailProperty {
-  final String idDetail;
-  final String nameDetail;
-  final String thumbDetail;
-  final String descDetail;
-  final String categoryDetail;
+class MealsProperty {
+  final String idMeal;
+  final String nameMeal;
+  final String thumbMeal;
+  final String descMeal;
+  final String categoryMeal;
 
-  DetailProperty(this.idDetail, this.nameDetail, this.thumbDetail,
-      this.descDetail, this.categoryDetail);
+  MealsProperty(this.idMeal, this.nameMeal, this.thumbMeal,
+      this.descMeal, this.categoryMeal);
 
-  factory DetailProperty.fromJson(Map<String, dynamic> json) {
-    return DetailProperty(json['idMeal'], json['strMeal'], json['strMealThumb'],
+  factory MealsProperty.fromJson(Map<String, dynamic> json) {
+    return MealsProperty(json['idMeal'], json['strMeal'], json['strMealThumb'],
         json['strInstructions'], json['strCategory']);
   }
 
   Map<String, dynamic> toMap() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['idMeal'] = this.idDetail;
-    data['strMeal'] = this.nameDetail;
-    data['strMealThumb'] = this.thumbDetail;
-    data['strInstructions'] = this.descDetail;
-    data['strCategory'] = this.categoryDetail;  
+    data['idMeal'] = this.idMeal;
+    data['strMeal'] = this.nameMeal;
+    data['strMealThumb'] = this.thumbMeal;
+    data['strInstructions'] = this.descMeal;
+    data['strCategory'] = this.categoryMeal;  
     return data;
   }
 }

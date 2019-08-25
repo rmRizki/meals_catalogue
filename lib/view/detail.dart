@@ -46,8 +46,8 @@ class _DetailScreenState extends State<DetailScreen> {
             if (snapshot.hasError) {
               return Text('Error: ${snapshot.error}');
             } else {
-              var name = snapshot.data.detail[0].nameDetail;
-              var desc = snapshot.data.detail[0].descDetail;
+              var name = snapshot.data.meals[0].nameMeal;
+              var desc = snapshot.data.meals[0].descMeal;
               return ListView(
                 children: <Widget>[
                   Container(
