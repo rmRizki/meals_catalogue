@@ -1,4 +1,5 @@
 import 'package:async/async.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:meals_catalogue/api/meals_api.dart';
 import 'package:meals_catalogue/database/db_helper.dart';
@@ -18,8 +19,8 @@ class DetailScreen extends StatefulWidget {
 }
 
 class _DetailScreenState extends State<DetailScreen> {
-  bool isFavorite = false;
   final memoizer = new AsyncMemoizer();
+  bool isFavorite = false;
 
   @override
   void initState() {
@@ -44,7 +45,8 @@ class _DetailScreenState extends State<DetailScreen> {
               flexibleSpace: FlexibleSpaceBar(
                 background: Hero(
                   tag: widget.img,
-                  child: Image.network(widget.img, fit: BoxFit.fill),
+                  child: CachedNetworkImage(
+                      imageUrl: widget.img, fit: BoxFit.fill),
                 ),
               ),
             )
@@ -57,7 +59,7 @@ class _DetailScreenState extends State<DetailScreen> {
 
   Widget detailDesc() {
     return FutureBuilder(
-      future: this.memoizer.runOnce(() async{
+      future: this.memoizer.runOnce(() async {
         return MealsApi().loadDataDetail(widget.id);
       }),
       builder: (context, snapshot) {

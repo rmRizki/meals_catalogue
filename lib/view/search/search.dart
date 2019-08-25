@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:meals_catalogue/api/meals_api.dart';
 import 'package:meals_catalogue/view/detail.dart';
@@ -90,8 +91,8 @@ class _SearchScreenState extends State<SearchScreen> {
                             child: GestureDetector(
                                 child: Hero(
                                   tag: img,
-                                  child: Image.network(
-                                    img,
+                                  child: CachedNetworkImage(
+                                    imageUrl: img,
                                     fit: BoxFit.cover,
                                   ),
                                 ),
