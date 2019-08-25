@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meals_catalogue/helper/key_name.dart';
 import 'package:meals_catalogue/view/menu_dessert.dart';
 import 'package:meals_catalogue/view/menu_favorite.dart';
 import 'package:meals_catalogue/view/menu_seafood.dart';
@@ -21,11 +22,11 @@ class _BottomNavigationState extends State<BottomNavigation> {
         index: _currentIndex,
       ),
       floatingActionButton: FloatingActionButton(
+        key: Key(SEARCH_FAB),
         child: Icon(Icons.search),
-        onPressed: (){
-          Navigator.push(context, MaterialPageRoute(
-            builder: (context) => SearchScreen()
-          ));
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => SearchScreen()));
         },
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -33,15 +34,24 @@ class _BottomNavigationState extends State<BottomNavigation> {
         currentIndex: _currentIndex,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.free_breakfast),
+            icon: Icon(
+              Icons.free_breakfast,
+              key: Key(BOT_NAV_DESSERT),
+            ),
             title: Text('Dessert'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.restaurant),
+            icon: Icon(
+              Icons.restaurant,
+              key: Key(BOT_NAV_SEAFOOD),
+            ),
             title: Text('Seafood'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
+            icon: Icon(
+              Icons.favorite,
+              key: Key(BOT_NAV_FAVORITE),
+            ),
             title: Text('Favorite'),
           ),
         ],

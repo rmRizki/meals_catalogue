@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:meals_catalogue/api/meals_api.dart';
+import 'package:meals_catalogue/helper/key_name.dart';
 import 'package:meals_catalogue/view/detail.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -21,6 +22,8 @@ class _SearchScreenState extends State<SearchScreen> {
           return <Widget>[
             SliverAppBar(
               title: TextField(
+                key: Key(SEARCH_TEXTFIELD),
+                autofocus: true,
                 style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                     hintText: "$category ...",
@@ -33,6 +36,7 @@ class _SearchScreenState extends State<SearchScreen> {
               ),
               actions: <Widget>[
                 RaisedButton(
+                  key: Key(SEARCH_DESSERT_BUTTON),
                   child: Text('Dessert'),
                   onPressed: () {
                     setState(() {
@@ -44,6 +48,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   elevation: 8,
                 ),
                 RaisedButton(
+                  key: Key(SEARCH_SEAFOOD_BUTTON),
                   child: Text('Seafood'),
                   onPressed: () {
                     setState(() {
@@ -65,6 +70,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
   Widget searchResult() {
     return FutureBuilder(
+      key: Key(SEARCH_RESULT),
         future: MealsApi().loadDataSearch(inputQuery, category),
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
@@ -91,6 +97,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           child: GridTile(
                             child: GestureDetector(
                                 child: Hero(
+                                  key: Key(SEARCH_RESULT_ITEM),
                                   tag: "$img$index$menuName",
                                   child: CachedNetworkImage(
                                     imageUrl: img,

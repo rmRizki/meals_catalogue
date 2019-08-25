@@ -3,6 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:meals_catalogue/api/meals_api.dart';
 import 'package:meals_catalogue/database/db_helper.dart';
+import 'package:meals_catalogue/helper/key_name.dart';
 import 'package:meals_catalogue/model/data_meals_detail.dart';
 import 'package:toast/toast.dart';
 
@@ -107,6 +108,7 @@ class _DetailScreenState extends State<DetailScreen> {
   favoriteButton() {
     if (isFavorite) {
       return FloatingActionButton(
+        key: Key(FAVORITE_FAB),
         child: Icon(
           Icons.favorite,
         ),
@@ -121,6 +123,7 @@ class _DetailScreenState extends State<DetailScreen> {
       );
     } else {
       return FloatingActionButton(
+        key: Key(FAVORITE_FAB),
         child: Icon(
           Icons.favorite_border,
         ),

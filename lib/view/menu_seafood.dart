@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:meals_catalogue/api/meals_api.dart';
+import 'package:meals_catalogue/helper/key_name.dart';
 import 'package:meals_catalogue/view/detail.dart';
 
 class SeafoodScreen extends StatefulWidget {
@@ -16,6 +17,7 @@ class _SeafoodScreenState extends State<SeafoodScreen> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
+        key: Key(FUTURE_GRID_SEAFOOD),
         future: future,
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
@@ -26,6 +28,7 @@ class _SeafoodScreenState extends State<SeafoodScreen> {
                 return Text('Error: ${snapshot.error}');
               else
                 return GridView.builder(
+                  key: Key(GRID_SEAFOOD),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2),
                   itemCount: snapshot.data.seafood.length,

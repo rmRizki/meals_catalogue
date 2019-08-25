@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meals_catalogue/helper/key_name.dart';
 import 'package:meals_catalogue/view/favorite/favorite_dessert.dart';
 import 'package:meals_catalogue/view/favorite/favorite_seafood.dart';
 
@@ -16,9 +17,11 @@ class FavoriteScreen extends StatelessWidget {
                 title: TabBar(
                   tabs: <Widget>[
                     Tab(
+                      key: Key(FAVORITE_DESSERT),
                       text: "Dessert",
                     ),
                     Tab(
+                      key: Key(FAVORITE_SEAFOOD),
                       text: "Seafood",
                     )
                   ],

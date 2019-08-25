@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:meals_catalogue/database/db_helper.dart';
+import 'package:meals_catalogue/helper/key_name.dart';
 import 'package:meals_catalogue/model/data_meals_detail.dart';
 import 'package:meals_catalogue/view/detail.dart';
 
@@ -47,6 +48,7 @@ class _FavoriteDessertState extends State<FavoriteDessert> {
                             child: GridTile(
                               child: GestureDetector(
                                   child: Hero(
+                                      key: Key(FAVORITE_DESSERT_ITEM),
                                       tag: "$img$index$menuName",
                                       child: CachedNetworkImage(
                                         imageUrl: img,
