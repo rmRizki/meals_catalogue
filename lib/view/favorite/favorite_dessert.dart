@@ -23,6 +23,7 @@ class _FavoriteDessertState extends State<FavoriteDessert> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
+        initialData: <MealsProperty>[],
         future: listMeals,
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
