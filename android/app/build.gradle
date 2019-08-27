@@ -48,6 +48,29 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    flavorDimensions "flavor-type"
+
+    productFlavors {
+        development {
+            dimension "flavor-type"
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+        }
+        performance {
+            dimension "flavor-type"
+            applicationIdSuffix ".performance"
+            versionNameSuffix "-performance"
+        }
+        release {
+            dimension "flavor-type"
+        }
+        release_dark {
+            dimension "flavor-type"
+            applicationIdSuffix ".dark"
+            versionNameSuffix "-dark"
+        }
+    }
 }
 
 flutter {

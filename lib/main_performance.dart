@@ -3,6 +3,6 @@ import 'package:meals_catalogue/app_entry.dart';
 import 'package:meals_catalogue/helper/flavors_config.dart';
 
 void main() {
-  Config.appFlavor = Flavor.RELEASE;
+  Config.appFlavor = Flavor.PERFORMANCE;
   runApp(MyApp());
 }
