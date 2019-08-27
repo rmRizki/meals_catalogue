@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum Flavor { DEVELOPMENT, PERFORMANCE, RELEASE, RELEASE_DARK }
+enum Flavor { DEVELOPMENT, PERFORMANCE, RELEASE_LIGHT, RELEASE_DARK }
 
 class Config {
   static Flavor appFlavor;
@@ -36,7 +36,7 @@ class Config {
 
   static ThemeData get themeData {
     switch (appFlavor) {
-      case Flavor.RELEASE:
+      case Flavor.RELEASE_LIGHT:
         return ThemeData.light();
       case Flavor.RELEASE_DARK:
         return ThemeData.dark();

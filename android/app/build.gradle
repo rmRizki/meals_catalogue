@@ -62,8 +62,10 @@ android {
             applicationIdSuffix ".performance"
             versionNameSuffix "-performance"
         }
-        release {
+        release_light {
             dimension "flavor-type"
+            applicationIdSuffix ".light"
+            versionNameSuffix "-light"
         }
         release_dark {
             dimension "flavor-type"
