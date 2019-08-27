@@ -35,7 +35,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.free_breakfast,
+              Icons.restaurant_menu,
               key: Key(BOT_NAV_DESSERT),
             ),
             title: Text('Dessert'),

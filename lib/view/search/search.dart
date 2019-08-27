@@ -35,29 +35,41 @@ class _SearchScreenState extends State<SearchScreen> {
                 },
               ),
               actions: <Widget>[
-                RaisedButton(
+                FlatButton(
                   key: Key(SEARCH_DESSERT_BUTTON),
-                  child: Text('Dessert'),
+                  child: Row(
+                    children: <Widget>[
+                      Icon(Icons.restaurant_menu),
+                      Padding(
+                        padding: EdgeInsets.only(left: 4.0),
+                        child: Text("Dessert"),
+                      )
+                    ],
+                  ),
                   onPressed: () {
                     setState(() {
                       category = "Dessert";
                     });
                   },
                   textColor: Colors.white,
-                  color: Colors.blue,
-                  elevation: 8,
                 ),
-                RaisedButton(
+                FlatButton(
                   key: Key(SEARCH_SEAFOOD_BUTTON),
-                  child: Text('Seafood'),
+                  child: Row(
+                    children: <Widget>[
+                      Icon(Icons.restaurant),
+                      Padding(
+                        padding: EdgeInsets.only(left: 4.0),
+                        child: Text("Seafood"),
+                      )
+                    ],
+                  ),
                   onPressed: () {
                     setState(() {
                       category = "Seafood";
                     });
                   },
                   textColor: Colors.white,
-                  color: Colors.blue,
-                  elevation: 8,
                 )
               ],
             ),
