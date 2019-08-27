@@ -74,7 +74,8 @@ class _FavoriteDessertState extends State<FavoriteDessert> {
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       fontWeight: FontWeight.w500,
-                                      fontSize: 18),
+                                      fontSize: 18,
+                                      color: Colors.black),
                                 ),
                               ),
                             ),

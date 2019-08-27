@@ -82,7 +82,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
   Widget searchResult() {
     return FutureBuilder(
-      key: Key(SEARCH_RESULT),
+        key: Key(SEARCH_RESULT),
         future: MealsApi().loadDataSearch(inputQuery, category),
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
@@ -135,7 +135,9 @@ class _SearchScreenState extends State<SearchScreen> {
                                 name,
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                    fontWeight: FontWeight.w500, fontSize: 18),
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 18,
+                                    color: Colors.black),
                               ),
                             ),
                           ),
