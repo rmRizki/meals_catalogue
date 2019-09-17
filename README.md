@@ -1,3 +1,4 @@
 # meals_catalogue
 
-Simple App displaying list of foods and detail
+Submission for dicoding class.
+https://www.dicoding.com/academies/110
